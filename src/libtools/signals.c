@@ -11,9 +11,6 @@
 #include <ucontext.h>
 #include <setjmp.h>
 #include <sys/mman.h>
-#ifndef ANDROID
-#include <execinfo.h>
-#endif
 
 #include "box86context.h"
 #include "debug.h"

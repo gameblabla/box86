@@ -225,7 +225,7 @@ static void initWrappedLib(library_t *lib, box86context_t* context) {
                 return;
             }
 
-            #ifdef ANDROID
+            #if 1
             printf_log(LOG_DEBUG, "No dlinfo on Android %s\n", lib->name);
             #else
             linkmap_t *lm = addLinkMapLib(lib);

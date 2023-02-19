@@ -2037,7 +2037,8 @@ EXPORT int my_scandir(x86emu_t *emu, void* dir, void* namelist, void* sel, void*
 
 EXPORT int my_ftw64(x86emu_t* emu, void* filename, void* func, int descriptors)
 {
-    return ftw64(filename, findftw64Fct(func), descriptors);
+    //return ftw64(filename, findftw64Fct(func), descriptors);
+    return 0;
 }
 
 EXPORT int32_t my_nftw64(x86emu_t* emu, void* pathname, void* B, int32_t nopenfd, int32_t flags)
@@ -2553,15 +2554,8 @@ void ctSetup()
 {
 }
 #else
-EXPORT const unsigned short int *my___ctype_b;
-EXPORT const int32_t *my___ctype_tolower;
-EXPORT const int32_t *my___ctype_toupper;
-
 void ctSetup()
 {
-    my___ctype_b = *(__ctype_b_loc());
-    my___ctype_toupper = *(__ctype_toupper_loc());
-    my___ctype_tolower = *(__ctype_tolower_loc());
 }
 #endif
 

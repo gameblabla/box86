@@ -21,7 +21,7 @@ void UnalignStat64(const void* source, void* dest)
 	memset(i386st->__pad3, 0, sizeof(i386st->__pad3));
     i386st->st_dev      = st->st_dev;
 #ifndef POWERPCLE
-    i386st->__st_ino    = st->__st_ino;
+    i386st->__st_ino    = st->st_ino;
 #else
     i386st->__st_ino    = st->st_ino; // Separate __st_ino doesn't 
                                       // exist on powerpc
